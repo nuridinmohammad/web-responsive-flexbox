@@ -20,8 +20,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  scroll-behavior: smooth;\r\n  font-family: \"Poppins\", sans-serif;\r\n}\r\n\r\nbody {\r\n  overflow-x: hidden;\r\n}\r\n\r\n/* Navigation */\r\nnav {\r\n  display: flex;\r\n  background-color: blueviolet;\r\n  /* padding: 20px 0; */\r\n  height: 60px;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n  color: white;\r\n}\r\n\r\nnav .logo h4 {\r\n  letter-spacing: 2px;\r\n  cursor: pointer;\r\n}\r\n\r\nnav ul {\r\n  display: flex;\r\n  list-style: none;\r\n  width: 50%;\r\n  justify-content: space-between;\r\n}\r\n\r\nnav ul li a {\r\n  text-decoration: none;\r\n  color: white;\r\n  letter-spacing: 1.5px;\r\n}\r\n/* Navigation */\r\n\r\n/* Hamburger Menu */\r\n.menu-toggle {\r\n  display: none;\r\n  flex-direction: column;\r\n  height: 20px;\r\n  /* background: black; */\r\n  justify-content: space-between;\r\n  position: relative;\r\n}\r\n\r\n.menu-toggle input {\r\n  position: absolute;\r\n  width: 40px;\r\n  height: 28px;\r\n  top: -5px;\r\n  left: -6px;\r\n  opacity: 0;\r\n  cursor: pointer;\r\n  z-index: 10;\r\n}\r\n\r\n.menu-toggle span {\r\n  display: block;\r\n  height: 3px;\r\n  width: 28px;\r\n  background-color: white;\r\n  border-radius: 3px;\r\n  transition: all 0.5s;\r\n}\r\n\r\n.menu-toggle span:nth-child(2) {\r\n  transform-origin: 0 0;\r\n}\r\n\r\n.menu-toggle span:nth-child(4) {\r\n  transform-origin: 0 100%;\r\n}\r\n\r\n.menu-toggle input:checked ~ span:nth-child(2) {\r\n  transform: rotate(45deg) translate(-1px, -1px);\r\n}\r\n\r\n.menu-toggle input:checked ~ span:nth-child(3) {\r\n  opacity: 0;\r\n  transform: scale(0);\r\n}\r\n\r\n.menu-toggle input:checked ~ span:nth-child(4) {\r\n  transform: rotate(-45deg) translate(-1px, 0);\r\n}\r\n/* Hamburger Menu */\r\n\r\n/* Responsive Breakpoint */\r\n@media screen and (max-width: 768px) {\r\n  nav ul {\r\n    width: 60%;\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 576px) {\r\n  .menu-toggle {\r\n    display: flex;\r\n  }\r\n  nav ul {\r\n    position: absolute;\r\n    flex-direction: column;\r\n    right: 0;\r\n    top: 0;\r\n    height: 100vh;\r\n    background-color: goldenrod;\r\n    z-index: -10;\r\n    justify-content: space-evenly;\r\n    align-items: center;\r\n    transform: translateX(100vw);\r\n    transition: all 0.5s;\r\n    opacity: 0;\r\n  }\r\n\r\n  nav ul.active {\r\n    opacity: 1;\r\n    transform: translateX(0);\r\n  }\r\n}\r\n/* Responsive Breakpoint */\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -589,12 +590,17 @@ module.exports = styleTagTransform;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*********************!*\
-  !*** ./src/main.js ***!
-  \*********************/
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 
+var menuToggle = document.querySelector(".menu-toggle input");
+var nav = document.querySelector("nav ul");
+menuToggle.addEventListener("click", function () {
+  nav.classList.toggle("active");
+});
 })();
 
 /******/ })()

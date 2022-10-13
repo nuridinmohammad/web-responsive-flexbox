@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: "./src/app.js",
   mode: "development",
   watch: true,
   devtool: false,
